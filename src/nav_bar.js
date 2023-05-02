@@ -15,7 +15,7 @@ class NavBar extends React.Component {
                 </div>
                 <div className="right_content">
                     <ul>    
-                        <li><a href="">Login</a></li>
+                        <li><a href="/login_page">Login</a></li>
                     </ul>
                 </div>
             </nav>
