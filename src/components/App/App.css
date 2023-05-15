@@ -31,8 +31,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-
-
 .main-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -40,23 +38,21 @@ nav a:hover {
   margin: 3%;
 }
 
-#Header {
+.Header {
   grid-column: 1 / span 2;
 }
 
-
-#post {
+.post {
   grid-column: 2;
   border: 2px solid black;
   border-radius: 10%;
   padding: 8px;
 }
 
-
-#Latest {
+.Latest {
   grid-column: 2;
 }
 
-#Popular {
+.Popular {
   grid-column: 2;
 }

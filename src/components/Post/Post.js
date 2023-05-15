@@ -1,14 +1,19 @@
-import React, { Component} from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-class Post extends React.Component {
-    render(){
-        return(
-            <div id="post" className="right_content">
-                <h4 id="post_num">Blog post #{this.props.post_num}</h4>
-                <p id="post_text">{this.props.post_text}</p>
-                <p id="post_date">{this.props.post_date}</p>
-            </div>
-        )
-    }
-}
+const Post = (props) => {
+    const navigate = useNavigate();
+    return (
+        <div
+            className="post"
+            onClick={() => {
+                navigate("post/" + props.post_num);
+            }}
+        >
+            <h4>Blog post #{props.post_num}</h4>
+            <p>{props.post_text}</p>
+            <p>{props.post_date}</p>
+        </div>
+    );
+};
 export default Post;

@@ -1,33 +1,16 @@
 import React from "react";
-import NavBar from "./NavBar.js";
 import Header from "./Header.js";
 import Post from "./Post/Post.js";
 import Latest from "./Post/Latest.js";
 import Popular from "./Post/Popular.js";
 import "./App/App.css";
+import Grid from "@mui/material/Grid";
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      messages: [
-        {
-          post_num: "1",
-          post_text:
-            "My first blog post is all about my blog post and how to write a new post in my blog, you can find it here",
-          post_date: "Published 1 day ago by Israel",
-        },
-        {
-          post_num: "2",
-          post_text: "My second blog post is all about my blog post",
-          post_date: "Published 2 day ago by Joe",
-        },
-        {
-          post_num: "3",
-          post_text: "My third blog post is all about my blog post",
-          post_date: "Published 3 day ago by Israel",
-        },
-      ],
+      messages: this.props.posts,
     };
   }
 
@@ -41,18 +24,18 @@ class HomePage extends React.Component {
       />
     ));
     return (
-      <div className="home-page">
-        <div className="main-content">
-          <div id="left-content">
-            <Header />
-            {listItem}
-          </div>
-          <div id="right-content">
-            <Latest />
-            <Popular />
-          </div>
-        </div>
-      </div>
+      <Grid container spacing={2}>
+        <Grid item md={12}>
+          <Header />
+        </Grid>
+        <Grid item md={8}>
+          {listItem}
+        </Grid>
+        <Grid item md={4}>
+          <Latest />
+          <Popular />
+        </Grid>
+      </Grid>
     );
   }
 }

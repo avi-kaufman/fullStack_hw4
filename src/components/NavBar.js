@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
-
 
 class NavBar extends React.Component {
   render() {
@@ -17,11 +15,6 @@ class NavBar extends React.Component {
             <li>
               <NavLink to="/AboutMe" activeClassName="active">
                 About Me
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/PostPage" activeClassName="active">
-                Post
               </NavLink>
             </li>
             <li>

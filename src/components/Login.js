@@ -6,7 +6,7 @@ class Login extends React.Component {
   render() {
     return (
       <Box id="login" display="flex" justifyContent="center">
-        <Box width="50%">
+        <Box md={{ width: "30%" }} xs={{ width: "80%" }}>
           <Box textAlign="center">
             <h2>Login</h2>
           </Box>

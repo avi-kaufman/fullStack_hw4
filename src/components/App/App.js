@@ -9,20 +9,35 @@ import PostPage from "../Post/PostPage";
 import NewPost from "../Post/NewPost";
 
 function App() {
+  const posts = [
+    {
+      post_num: "1",
+      post_text:
+        "My first blog post is all about my blog post and how to write a new post in my blog, you can find it here",
+      post_date: "Published 1 day ago by Israel",
+    },
+    {
+      post_num: "2",
+      post_text: "My second blog post is all about my blog post",
+      post_date: "Published 2 day ago by Joe",
+    },
+    {
+      post_num: "3",
+      post_text: "My third blog post is all about my blog post",
+      post_date: "Published 3 day ago by Israel",
+    },
+  ];
   return (
     <Router>
       <div className="App">
         <NavBar />
-        <div className="main-content">
-          <Routes>
-            <Route path="/AboutMe" element={<AboutMe />} />
-            <Route path="/NewPost" element={<NewPost />} />
-            <Route path="/PostPage" element={<PostPage />} />
-            <Route path="/post/:id" element={<PostPage />} />
-            <Route path="/" element={<HomePage />} />
-            <Route path="/Login" element={<Login />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/AboutMe" element={<AboutMe />} />
+          <Route path="/NewPost" element={<NewPost />} />
+          <Route path="/post/:id" element={<PostPage posts={posts} />} />
+          <Route path="/" element={<HomePage posts={posts} />} />
+          <Route path="/Login" element={<Login />} />
+        </Routes>
       </div>
     </Router>
   );
